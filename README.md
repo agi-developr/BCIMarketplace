@@ -14,6 +14,7 @@ A modern e-commerce platform built with Next.js, TypeScript, and Tailwind CSS, d
 ## 🚀 Live Demo
 
 **Production URL**: https://bcimarketplace.uc.r.appspot.com
+**Custom Domain**: https://bcimarketplace.com (DNS propagation may take up to 24 hours)
 
 ## 🛠️ Tech Stack
 
