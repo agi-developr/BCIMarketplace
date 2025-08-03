@@ -13,7 +13,7 @@ A modern e-commerce platform built with Next.js, TypeScript, and Tailwind CSS, d
 
 ## 🚀 Live Demo
 
-**Production URL**: https://bci-marketplace-2024.uc.r.appspot.com
+**Production URL**: https://bcimarketplace.uc.r.appspot.com
 
 ## 🛠️ Tech Stack
 
