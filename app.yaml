@@ -1,5 +1,5 @@
-runtime: nodejs18
-service: bci-marketplace
+runtime: nodejs20
+service: default
 
 env_variables:
   NODE_ENV: production
