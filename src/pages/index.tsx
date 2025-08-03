@@ -2,14 +2,11 @@ import { useState } from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { 
-  ShoppingBagIcon, 
   TruckIcon, 
   ShieldCheckIcon, 
-  StarIcon,
-  MagnifyingGlassIcon,
-  HeartIcon,
-  UserIcon
+  StarIcon
 } from '@heroicons/react/24/outline'
+import Navigation from '../components/Navigation'
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -44,44 +41,7 @@ export default function Home() {
         <meta name="description" content="Discover amazing products at great prices on BCI Marketplace" />
       </Head>
 
-      {/* Header */}
-      <header className="bg-white shadow-sm">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center py-4">
-            <div className="flex items-center">
-              <h1 className="text-2xl font-bold text-gray-900">BCI Marketplace</h1>
-            </div>
-            
-            <div className="flex-1 max-w-lg mx-8">
-              <div className="relative">
-                <input
-                  type="text"
-                  placeholder="Search for products..."
-                  value={searchQuery}
-                  onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                />
-                <MagnifyingGlassIcon className="absolute left-3 top-2.5 h-5 w-5 text-gray-400" />
-              </div>
-            </div>
-
-            <div className="flex items-center space-x-4">
-              <button className="p-2 text-gray-600 hover:text-gray-900">
-                <HeartIcon className="h-6 w-6" />
-              </button>
-              <button className="p-2 text-gray-600 hover:text-gray-900">
-                <UserIcon className="h-6 w-6" />
-              </button>
-              <button className="p-2 text-gray-600 hover:text-gray-900 relative">
-                <ShoppingBagIcon className="h-6 w-6" />
-                <span className="absolute -top-1 -right-1 bg-red-500 text-white text-xs rounded-full h-5 w-5 flex items-center justify-center">
-                  0
-                </span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </header>
+      <Navigation searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       {/* Hero Section */}
       <section className="py-20">
@@ -100,9 +60,9 @@ export default function Home() {
               Discover amazing products from trusted sellers. Shop with confidence knowing you're getting quality items at great prices.
             </p>
             <div className="flex justify-center space-x-4">
-              <button className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
+              <a href="/products" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
                 Start Shopping
-              </button>
+              </a>
               <button className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-blue-50 transition-colors">
                 Learn More
               </button>
@@ -156,9 +116,9 @@ export default function Home() {
           <p className="text-xl text-blue-100 mb-8">
             Join thousands of satisfied customers who trust BCI Marketplace
           </p>
-          <button className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
+          <a href="/products" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
             Get Started Today
-          </button>
+          </a>
         </div>
       </section>
 
