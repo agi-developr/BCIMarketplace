@@ -1,186 +1,153 @@
-# BCI Marketplace
+# BCIMarketplace
 
-A modern e-commerce platform built with Next.js, TypeScript, and Tailwind CSS.
+A modern e-commerce platform built with Next.js, TypeScript, and Tailwind CSS, deployed on Google Cloud Platform.
 
-## 🚀 Features
+## 🌟 Features
 
-- **Modern UI/UX**: Beautiful, responsive design with smooth animations
-- **TypeScript**: Full type safety for better development experience
-- **Tailwind CSS**: Utility-first CSS framework for rapid styling
-- **React Query**: Efficient data fetching and caching
-- **Framer Motion**: Smooth animations and transitions
-- **Heroicons**: Beautiful, consistent icons
-- **Zustand**: Lightweight state management
+- **Modern UI/UX**: Built with Tailwind CSS and Framer Motion for smooth animations
+- **TypeScript**: Full type safety throughout the application
+- **Responsive Design**: Mobile-first approach with responsive components
+- **State Management**: Zustand for efficient state management
+- **Data Fetching**: React Query for optimized data fetching and caching
+- **Component Library**: Headless UI and Heroicons for accessible components
+
+## 🚀 Live Demo
+
+**Production URL**: https://bci-marketplace-2024.uc.r.appspot.com
 
 ## 🛠️ Tech Stack
 
 - **Framework**: Next.js 14
 - **Language**: TypeScript
 - **Styling**: Tailwind CSS
+- **Animations**: Framer Motion
 - **State Management**: Zustand
 - **Data Fetching**: React Query
-- **Animations**: Framer Motion
-- **Icons**: Heroicons
-- **Deployment**: Google Cloud Platform
+- **UI Components**: Headless UI, Heroicons
+- **Deployment**: Google Cloud App Engine
 
 ## 📦 Installation
 
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/bci-marketplace.git
-cd bci-marketplace
-```
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/agi-developr/BCIMarketplace.git
+   cd BCIMarketplace
+   ```
 
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-```
+2. **Install dependencies**
+   ```bash
+   npm install
+   ```
 
-3. Create a `.env.local` file in the root directory:
-```env
-NEXT_PUBLIC_API_URL=your_api_url_here
-NEXT_PUBLIC_GOOGLE_ANALYTICS_ID=your_ga_id_here
-```
+3. **Run the development server**
+   ```bash
+   npm run dev
+   ```
 
-4. Run the development server:
-```bash
-npm run dev
-# or
-yarn dev
-```
-
-5. Open [http://localhost:3000](http://localhost:3000) in your browser.
+4. **Open your browser**
+   Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 🏗️ Project Structure
 
 ```
-bci-marketplace/
+BCIMarketplace/
 ├── src/
 │   ├── components/     # Reusable UI components
-│   ├── pages/         # Next.js pages
-│   ├── styles/        # Global styles and CSS
-│   └── utils/         # Utility functions
+│   ├── pages/         # Next.js pages and API routes
+│   ├── styles/        # Global styles and Tailwind config
+│   └── utils/         # Utility functions and helpers
 ├── public/            # Static assets
-├── config/            # Configuration files
-├── package.json       # Dependencies and scripts
-├── next.config.js     # Next.js configuration
-├── tailwind.config.js # Tailwind CSS configuration
-└── tsconfig.json      # TypeScript configuration
+├── app.yaml          # Google Cloud App Engine configuration
+├── Dockerfile        # Docker configuration
+└── package.json      # Dependencies and scripts
 ```
 
 ## 🚀 Deployment
 
-### Google Cloud Platform
+### Google Cloud App Engine
 
-1. Install Google Cloud SDK
-2. Initialize your project:
+This project is configured for deployment on Google Cloud App Engine.
+
+**Deploy to production:**
 ```bash
-gcloud init
+gcloud app deploy
 ```
 
-3. Deploy to Google Cloud Run:
+**View logs:**
 ```bash
-gcloud run deploy bci-marketplace --source .
+gcloud app logs tail -s default
+```
+
+**Open in browser:**
+```bash
+gcloud app browse
 ```
 
 ### Environment Variables
 
-Set up the following environment variables in Google Cloud:
-
-- `NEXT_PUBLIC_API_URL`: Your API endpoint
-- `NEXT_PUBLIC_GOOGLE_ANALYTICS_ID`: Google Analytics ID
-- `DATABASE_URL`: Database connection string (if applicable)
-
-## 🧪 Testing
-
-Run the test suite:
-```bash
-npm test
-# or
-yarn test
+Create a `.env.local` file for local development:
+```env
+NODE_ENV=development
 ```
 
-Run tests in watch mode:
-```bash
-npm run test:watch
-# or
-yarn test:watch
-```
-
-## 📝 Scripts
+## 📝 Available Scripts
 
 - `npm run dev` - Start development server
 - `npm run build` - Build for production
 - `npm run start` - Start production server
 - `npm run lint` - Run ESLint
-- `npm test` - Run tests
+- `npm run test` - Run tests
 - `npm run test:watch` - Run tests in watch mode
 
-## 🌐 Domain Configuration
+## 🔧 Configuration
 
-The project is configured for `BCIMarketplace.com`. Update the following files for your domain:
+### Google Cloud Setup
 
-1. `next.config.js` - Add your domain to the images.domains array
-2. `public/manifest.json` - Update the name and short_name
-3. `src/pages/_document.tsx` - Update meta tags
+1. **Install Google Cloud CLI**
+   ```bash
+   # macOS
+   brew install google-cloud-sdk
+   ```
 
-## 📱 PWA Features
+2. **Authenticate**
+   ```bash
+   gcloud auth login
+   ```
 
-The project includes Progressive Web App features:
+3. **Set project**
+   ```bash
+   gcloud config set project YOUR_PROJECT_ID
+   ```
 
-- Service Worker for offline functionality
-- Web App Manifest for app-like experience
-- Responsive design for all devices
+## 📊 Performance
 
-## 🔧 Customization
-
-### Colors
-
-Update the color scheme in `tailwind.config.js`:
-
-```javascript
-theme: {
-  extend: {
-    colors: {
-      primary: {
-        // Your primary colors
-      },
-      secondary: {
-        // Your secondary colors
-      },
-    },
-  },
-}
-```
-
-### Fonts
-
-Update fonts in `tailwind.config.js` and `src/styles/globals.css`.
+- **Lighthouse Score**: Optimized for performance, accessibility, and SEO
+- **Core Web Vitals**: Optimized for LCP, FID, and CLS
+- **Bundle Size**: Optimized with Next.js automatic code splitting
 
 ## 🤝 Contributing
 
 1. Fork the repository
-2. Create a feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
+2. Create a feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
 5. Open a Pull Request
 
 ## 📄 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🆘 Support
+## 👨‍💻 Author
 
-For support, email support@bcimarketplace.com or create an issue in the GitHub repository.
+**Ilia Prihodko** - [@agi-developr](https://github.com/agi-developr)
 
-## 🔗 Links
+## 🙏 Acknowledgments
 
-- [Website](https://bcimarketplace.com)
-- [Documentation](https://docs.bcimarketplace.com)
-- [API Documentation](https://api.bcimarketplace.com)
+- Next.js team for the amazing framework
+- Vercel for the deployment platform
+- Google Cloud Platform for hosting
+- Tailwind CSS for the utility-first CSS framework
 
 ---
 
-Built with ❤️ for BCI Marketplace 
+⭐ **Star this repository if you found it helpful!** 
