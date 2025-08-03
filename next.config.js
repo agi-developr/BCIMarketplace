@@ -2,9 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
-  images: {
-    domains: ['localhost', 'bci-marketplace.com', 'www.bci-marketplace.com'],
-  },
+images: {
+  domains: ['localhost', 'bcimarketplace.com', 'www.bcimarketplace.com'],
+},
   env: {
     CUSTOM_KEY: process.env.CUSTOM_KEY,
   },
@@ -31,4 +31,4 @@ const nextConfig = {
   },
 }
 
-module.exports = nextConfig 
+module.exports = nextConfig
