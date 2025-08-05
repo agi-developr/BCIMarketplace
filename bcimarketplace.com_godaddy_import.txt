@@ -1,0 +1,7 @@
+@	3600	IN	A	216.239.32.21
+@	3600	IN	A	216.239.34.21
+@	3600	IN	A	216.239.36.21
+@	3600	IN	A	216.239.38.21
+www	3600	IN	CNAME	ghs.googlehosted.com.
+_domainconnect	3600	IN	CNAME	_domainconnect.gd.domaincontrol.com.
+@	3600	IN	TXT	"google-site-verification=hrWeoqiBxXxzFUoVMblhdOyx3NGKVggv5OMptGvJNcU"

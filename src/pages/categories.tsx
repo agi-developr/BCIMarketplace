@@ -17,10 +17,12 @@ export default function Categories() {
 
   // Category images (using.unsplash.com for demonstration)
   const categoryImages: Record<string, string> = {
-    Electronics: 'https://images.unsplash.com/photo-1496171367470-9ed9a91ea931?w=400&h=300&fit=crop',
-    Clothing: 'https://images.unsplash.com/photo-1445205170230-053b83016050?w=400&h=300&fit=crop',
-    Home: 'https://images.unsplash.com/photo-1484154218962-a197022b5858?w=400&h=300&fit=crop',
-    Accessories: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop'
+    'Gaming BCIs': 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=400&h=300&fit=crop',
+    'Productivity BCIs': 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop',
+    'Wellness BCIs': 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=400&h=300&fit=crop',
+    'Research BCIs': 'https://images.unsplash.com/photo-1581091226033-d5c48150dbaa?w=400&h=300&fit=crop',
+    'Educational BCIs': 'https://images.unsplash.com/photo-1523580494860-f66e104786a7?w=400&h=300&fit=crop',
+    'Accessibility BCIs': 'https://images.unsplash.com/photo-1517840901100-8179e982acb7?w=400&h=300&fit=crop'
   }
 
   return (

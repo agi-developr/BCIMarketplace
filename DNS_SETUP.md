@@ -59,6 +59,8 @@ Add this CNAME record:
 - **Value**: ghs.googlehosted.com.
 - **TTL**: 3600 (or default)
 
+⚠️ **Critical Note**: Never use CNAME records for root domains (bcimarketplace.com). Root domains require A records pointing to Google's IP addresses as shown above. Using CNAME at root level violates DNS standards and will cause resolution failures.
+
 ## Important Notes
 
 1. **DNS Propagation**: Changes can take up to 24-48 hours to propagate globally
@@ -91,4 +93,4 @@ gcloud app domain-mappings list
 ✅ Domain mapping created in Google Cloud  
 ✅ SSL certificate will be provisioned automatically  
 ⏳ Waiting for DNS configuration at domain registrar  
-⏳ DNS propagation (up to 24-48 hours) 
+⏳ DNS propagation (up to 24-48 hours)

@@ -1,22 +1,22 @@
-// Mock data for products
+// Mock data for Brain Computer Interface products
 export const mockProducts = [
   {
     id: '1',
-    name: 'Wireless Bluetooth Headphones',
-    price: 89.99,
-    originalPrice: 129.99,
+    name: 'NeuroGamer Pro - EEG Gaming Headset',
+    price: 299.99,
+    originalPrice: 399.99,
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=600&fit=crop',
     rating: 4.5,
     reviewCount: 128,
-    discount: 31,
-    category: 'Electronics',
-    description: 'Experience crystal-clear audio with these premium wireless Bluetooth headphones. Featuring noise cancellation technology, comfortable over-ear design, and 30-hour battery life. Perfect for music lovers and professionals alike.',
+    discount: 25,
+    category: 'Gaming BCIs',
+    description: 'Experience immersive gaming like never before with the NeuroGamer Pro. This advanced EEG headset allows you to control games using only your thoughts, providing a truly hands-free gaming experience. Perfect for racing games, puzzle games, and more.',
     features: [
-      'Active Noise Cancellation',
-      '30-hour battery life',
-      'Bluetooth 5.0 connectivity',
-      'Premium over-ear design',
-      'Built-in microphone for calls'
+      'High-resolution EEG sensors',
+      'Real-time brain signal processing',
+      'Compatible with PC and VR gaming platforms',
+      'Comfortable, lightweight design for extended use',
+      'Built-in haptic feedback system'
     ],
     images: [
       'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=800&h=600&fit=crop',
@@ -27,19 +27,19 @@ export const mockProducts = [
   },
   {
     id: '2',
-    name: 'Smart Fitness Watch',
+    name: 'MindFlow Productivity BCI',
     price: 199.99,
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop',
     rating: 4.2,
     reviewCount: 89,
-    category: 'Electronics',
-    description: 'Track your fitness goals with this advanced smartwatch. Monitor heart rate, sleep patterns, steps, and more. With a vibrant display and water-resistant design, it\'s perfect for active lifestyles.',
+    category: 'Productivity BCIs',
+    description: 'Boost your productivity and focus with MindFlow. This innovative BCI device monitors your brain activity and provides real-time feedback to help you optimize your work sessions, reduce distractions, and maintain peak mental performance.',
     features: [
-      'Heart rate monitoring',
-      'Sleep tracking',
-      'Water-resistant up to 50m',
+      'Focus level monitoring',
+      'Distraction detection and alerts',
+      'Integration with popular productivity apps',
       '7-day battery life',
-      'Smartphone notifications'
+      'Smart notification management'
     ],
     images: [
       'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=800&h=600&fit=crop',
@@ -50,21 +50,21 @@ export const mockProducts = [
   },
   {
     id: '3',
-    name: 'Organic Cotton T-Shirt',
-    price: 24.99,
-    originalPrice: 34.99,
+    name: 'NeuroFit Wellness BCI',
+    price: 249.99,
+    originalPrice: 329.99,
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=600&fit=crop',
     rating: 4.7,
     reviewCount: 256,
-    discount: 29,
-    category: 'Clothing',
-    description: 'Comfortable and eco-friendly organic cotton t-shirt. Made from 100% sustainable materials with a soft feel and durable construction. Available in multiple colors and sizes.',
+    discount: 24,
+    category: 'Wellness BCIs',
+    description: 'Enhance your mental wellness with NeuroFit. This BCI device helps you track stress levels, practice meditation more effectively, and improve sleep quality through brainwave analysis and guided neurofeedback sessions.',
     features: [
-      '100% organic cotton',
-      'Eco-friendly production',
-      'Soft and comfortable',
-      'Machine washable',
-      'Available in multiple colors'
+      'Stress level monitoring',
+      'Meditation enhancement with real-time feedback',
+      'Sleep quality optimization',
+      'Personalized wellness recommendations',
+      'Progress tracking dashboard'
     ],
     images: [
       'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=800&h=600&fit=crop',
@@ -75,19 +75,19 @@ export const mockProducts = [
   },
   {
     id: '4',
-    name: 'Stainless Steel Water Bottle',
-    price: 19.99,
+    name: 'BrainWave Research Interface',
+    price: 899.99,
     image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&h=600&fit=crop',
     rating: 4.8,
     reviewCount: 342,
-    category: 'Home',
-    description: 'Keep your beverages hot or cold for hours with this premium stainless steel water bottle. Leak-proof design with a comfortable grip and easy-to-clean interior.',
+    category: 'Research BCIs',
+    description: 'Designed for academic researchers and institutions, the BrainWave Research Interface offers high-fidelity brain signal acquisition and analysis capabilities. Perfect for neuroscience studies, cognitive research, and BCI development.',
     features: [
-      'Keeps drinks hot for 12 hours',
-      'Keeps drinks cold for 24 hours',
-      'Leak-proof design',
-      'Easy to clean',
-      'Eco-friendly alternative to plastic bottles'
+      'High-fidelity signal acquisition',
+      'Multi-channel EEG recording',
+      'Real-time data processing',
+      'API for custom research applications',
+      'Compatible with MATLAB and Python analysis tools'
     ],
     images: [
       'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=800&h=600&fit=crop',
@@ -98,21 +98,21 @@ export const mockProducts = [
   },
   {
     id: '5',
-    name: 'Wireless Charging Pad',
-    price: 39.99,
-    originalPrice: 59.99,
+    name: 'NeuroLearn Educational BCI',
+    price: 179.99,
+    originalPrice: 249.99,
     image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop',
     rating: 4.3,
     reviewCount: 156,
-    discount: 33,
-    category: 'Electronics',
-    description: 'Fast wireless charging pad compatible with all Qi-enabled devices. Charge your phone, earbuds, or other accessories without cables for a clean, minimalist setup.',
+    discount: 28,
+    category: 'Educational BCIs',
+    description: 'Revolutionize learning with NeuroLearn. This BCI device helps educators understand student engagement levels and cognitive load in real-time, allowing for adaptive teaching methods and personalized learning experiences.',
     features: [
-      'Fast Qi wireless charging',
-      'Compatible with all Qi devices',
-      'LED indicator',
-      'Non-slip surface',
-      'Compact design'
+      'Student engagement monitoring',
+      'Cognitive load assessment',
+      'Real-time classroom feedback',
+      'Integration with learning management systems',
+      'Privacy-focused data handling'
     ],
     images: [
       'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=800&h=600&fit=crop',
@@ -123,19 +123,19 @@ export const mockProducts = [
   },
   {
     id: '6',
-    name: 'Leather Wallet',
-    price: 49.99,
+    name: 'MindControl Accessibility BCI',
+    price: 499.99,
     image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&h=600&fit=crop',
     rating: 4.6,
     reviewCount: 98,
-    category: 'Accessories',
-    description: 'Genuine leather wallet with multiple card slots and a cash compartment. Handcrafted with premium materials for durability and style that will last for years.',
+    category: 'Accessibility BCIs',
+    description: 'Empower individuals with motor disabilities through MindControl. This BCI device enables users to control computers, wheelchairs, and other assistive technologies using only their brain signals, providing greater independence and quality of life.',
     features: [
-      'Genuine leather construction',
-      '6 card slots',
-      'Cash compartment',
-      'ID window',
-      'Handcrafted quality'
+      'Motor disability assistance',
+      'Computer cursor control',
+      'Wheelchair navigation capabilities',
+      'Customizable interface controls',
+      'Medical-grade safety standards'
     ],
     images: [
       'https://images.unsplash.com/photo-1627123424574-724758594e93?w=800&h=600&fit=crop',

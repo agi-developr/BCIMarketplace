@@ -12,67 +12,67 @@ import ProductCard from '../components/ProductCard'
 const mockProducts = [
   {
     id: '1',
-    name: 'Wireless Bluetooth Headphones',
-    price: 89.99,
-    originalPrice: 129.99,
+    name: 'NeuroGamer Pro - EEG Gaming Headset',
+    price: 299.99,
+    originalPrice: 399.99,
     image: 'https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=300&fit=crop',
     rating: 4.5,
     reviewCount: 128,
-    discount: 31,
-    category: 'Electronics'
+    discount: 25,
+    category: 'Gaming BCIs'
   },
   {
     id: '2',
-    name: 'Smart Fitness Watch',
+    name: 'MindFlow Productivity BCI',
     price: 199.99,
     image: 'https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400&h=300&fit=crop',
     rating: 4.2,
     reviewCount: 89,
-    category: 'Electronics'
+    category: 'Productivity BCIs'
   },
   {
     id: '3',
-    name: 'Organic Cotton T-Shirt',
-    price: 24.99,
-    originalPrice: 34.99,
+    name: 'NeuroFit Wellness BCI',
+    price: 249.99,
+    originalPrice: 329.99,
     image: 'https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&h=300&fit=crop',
     rating: 4.7,
     reviewCount: 256,
-    discount: 29,
-    category: 'Clothing'
+    discount: 24,
+    category: 'Wellness BCIs'
   },
   {
     id: '4',
-    name: 'Stainless Steel Water Bottle',
-    price: 19.99,
+    name: 'BrainWave Research Interface',
+    price: 899.99,
     image: 'https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=400&h=300&fit=crop',
     rating: 4.8,
     reviewCount: 342,
-    category: 'Home'
+    category: 'Research BCIs'
   },
   {
     id: '5',
-    name: 'Wireless Charging Pad',
-    price: 39.99,
-    originalPrice: 59.99,
+    name: 'NeuroLearn Educational BCI',
+    price: 179.99,
+    originalPrice: 249.99,
     image: 'https://images.unsplash.com/photo-1586953208448-b95a79798f07?w=400&h=300&fit=crop',
     rating: 4.3,
     reviewCount: 156,
-    discount: 33,
-    category: 'Electronics'
+    discount: 28,
+    category: 'Educational BCIs'
   },
   {
     id: '6',
-    name: 'Leather Wallet',
-    price: 49.99,
+    name: 'MindControl Accessibility BCI',
+    price: 499.99,
     image: 'https://images.unsplash.com/photo-1627123424574-724758594e93?w=400&h=300&fit=crop',
     rating: 4.6,
     reviewCount: 98,
-    category: 'Accessories'
+    category: 'Accessibility BCIs'
   }
 ]
 
-const categories = ['All', 'Electronics', 'Clothing', 'Home', 'Accessories']
+const categories = ['All', 'Gaming BCIs', 'Productivity BCIs', 'Wellness BCIs', 'Research BCIs', 'Educational BCIs', 'Accessibility BCIs']
 
 export default function Products() {
   const [products, setProducts] = useState(mockProducts)
@@ -206,4 +206,4 @@ export default function Products() {
       </div>
     </div>
   )
-} 
+}

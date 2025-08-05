@@ -15,13 +15,13 @@ export default function Home() {
   const features = [
     {
       icon: ShoppingBagIcon,
-      title: 'Wide Selection',
-      description: 'Browse thousands of products from trusted sellers'
+      title: 'Cutting-Edge BCIs',
+      description: 'Browse the latest brain computer interfaces from leading innovators'
     },
     {
       icon: TruckIcon,
       title: 'Fast Delivery',
-      description: 'Get your orders delivered quickly and safely'
+      description: 'Get your BCI devices delivered quickly with safe handling'
     },
     {
       icon: ShieldCheckIcon,
@@ -31,15 +31,15 @@ export default function Home() {
     {
       icon: StarIcon,
       title: 'Quality Guarantee',
-      description: 'All products are quality-checked before shipping'
+      description: 'All BCI devices are quality-checked and come with manufacturer warranties'
     }
   ]
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100">
       <Head>
-        <title>BCI Marketplace - Your Trusted E-commerce Platform</title>
-        <meta name="description" content="Discover amazing products at great prices on BCI Marketplace" />
+        <title>BCI Marketplace - Your Gateway to Brain Computer Interfaces</title>
+        <meta name="description" content="Discover cutting-edge brain computer interfaces for gaming, productivity, wellness, and more at BCI Marketplace" />
       </Head>
 
       <Navigation searchQuery={searchQuery} onSearchChange={setSearchQuery} />
@@ -58,7 +58,7 @@ export default function Home() {
               <span className="text-blue-600">BCI Marketplace</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              Discover amazing products from trusted sellers. Shop with confidence knowing you're getting quality items at great prices.
+              Discover cutting-edge Brain Computer Interfaces for gaming, productivity, wellness, and more. Shop with confidence knowing you're getting quality BCI devices at competitive prices.
             </p>
             <div className="flex justify-center space-x-4">
               <a href="/products" className="bg-blue-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-blue-700 transition-colors">
@@ -112,13 +112,13 @@ export default function Home() {
       <section className="py-20 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl font-bold text-white mb-4">
-            Ready to Start Shopping?
+            Ready to Experience the Future?
           </h2>
           <p className="text-xl text-blue-100 mb-8">
-            Join thousands of satisfied customers who trust BCI Marketplace
+            Join thousands of innovators and enthusiasts exploring the world of Brain Computer Interfaces
           </p>
           <a href="/products" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-            Get Started Today
+            Explore BCIs Now
           </a>
         </div>
       </section>
@@ -130,7 +130,7 @@ export default function Home() {
             <div>
               <h3 className="text-lg font-semibold mb-4">BCI Marketplace</h3>
               <p className="text-gray-400">
-                Your trusted e-commerce platform for quality products and excellent service.
+                Your trusted marketplace for cutting-edge Brain Computer Interfaces.
               </p>
             </div>
             <div>
@@ -168,4 +168,4 @@ export default function Home() {
       </footer>
     </div>
   )
-} 
+}

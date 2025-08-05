@@ -19,13 +19,13 @@ export default function About() {
   const features = [
     {
       icon: ShoppingBagIcon,
-      title: 'Wide Selection',
-      description: 'Browse thousands of products from trusted sellers'
+      title: 'Cutting-Edge BCIs',
+      description: 'Browse the latest brain computer interfaces from leading innovators'
     },
     {
       icon: TruckIcon,
       title: 'Fast Delivery',
-      description: 'Get your orders delivered quickly and safely'
+      description: 'Get your BCI devices delivered quickly with safe handling'
     },
     {
       icon: ShieldCheckIcon,
@@ -35,7 +35,7 @@ export default function About() {
     {
       icon: StarIcon,
       title: 'Quality Guarantee',
-      description: 'All products are quality-checked before shipping'
+      description: 'All BCI devices are quality-checked and come with manufacturer warranties'
     }
   ]
 
@@ -43,7 +43,7 @@ export default function About() {
     <div className="min-h-screen bg-gray-50">
       <Head>
         <title>About Us - BCI Marketplace</title>
-        <meta name="description" content="Learn more about BCI Marketplace" />
+        <meta name="description" content="Learn more about BCI Marketplace - Your Gateway to Brain Computer Interfaces" />
       </Head>
 
       <Navigation />
@@ -60,20 +60,19 @@ export default function About() {
         <div className="bg-white rounded-lg shadow-md overflow-hidden">
           <div className="p-6 md:p-8">
             <h1 className="text-3xl font-bold text-gray-900 mb-2">About BCI Marketplace</h1>
-            <p className="text-gray-600 mb-8">Your trusted e-commerce platform since 2024</p>
+            <p className="text-gray-600 mb-8">Your trusted marketplace for Brain Computer Interfaces since 2024</p>
             
             <div className="mb-12">
               <h2 className="text-2xl font-semibold text-gray-900 mb-4">Our Mission</h2>
               <p className="text-gray-700 mb-4">
-                At BCI Marketplace, we're dedicated to providing an exceptional shopping experience 
-                that connects buyers with quality products from trusted sellers. Our mission is to make 
-                online shopping simple, secure, and enjoyable for everyone.
+                At BCI Marketplace, we're dedicated to making cutting-edge Brain Computer Interface 
+                technology accessible to everyone. Our mission is to connect innovators and enthusiasts 
+                with the latest BCI devices, making it simple to explore the future of human-computer interaction.
               </p>
               <p className="text-gray-700">
-                We believe in fostering a community of sellers and buyers where transparency, 
-                reliability, and customer satisfaction are at the core of everything we do. 
-                By leveraging cutting-edge technology and maintaining high standards for product 
-                quality and service, we aim to become your go-to marketplace for all shopping needs.
+                We believe in fostering a community where transparency, reliability, and customer satisfaction 
+                are at the core of everything we do. By maintaining high standards for product quality and service, 
+                we aim to become your go-to marketplace for all BCI needs.
               </p>
             </div>
             

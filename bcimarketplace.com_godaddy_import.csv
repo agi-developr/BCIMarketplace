@@ -1,0 +1,8 @@
+Record Type,Host,Data,TTL
+A,@,216.239.32.21,3600
+A,@,216.239.34.21,3600
+A,@,216.239.36.21,3600
+A,@,216.239.38.21,3600
+TXT,@,google-site-verification=hrWeoqiBxXxzFUoVMblhdOyx3NGKVggv5OMptGvJNcU,3600
+CNAME,www,ghs.googlehosted.com.,3600
+CNAME,_domainconnect,_domainconnect.gd.domaincontrol.com.,3600

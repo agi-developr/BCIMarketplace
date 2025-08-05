@@ -13,14 +13,13 @@ import { mockProducts } from '@/utils/mockData'
 
 export default function Deals() {
   const router = useRouter()
-  const [products, setProducts] = useState(mockProducts)
   const [deals, setDeals] = useState<any[]>([])
   const [sortBy, setSortBy] = useState('discount')
   const [favorites, setFavorites] = useState<string[]>([])
 
   useEffect(() => {
     // Filter products with discounts
-    const discountedProducts = products.filter(product => product.discount)
+    const discountedProducts = mockProducts.filter(product => product.discount)
     
     // Sort products
     const sortedProducts = [...discountedProducts].sort((a, b) => {
@@ -39,7 +38,7 @@ export default function Deals() {
     })
     
     setDeals(sortedProducts)
-  }, [products, sortBy])
+  }, [sortBy])
 
   const handleToggleFavorite = (product: any) => {
     setFavorites(prev => 
