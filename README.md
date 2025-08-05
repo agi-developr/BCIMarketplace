@@ -102,6 +102,35 @@ NODE_ENV=development
 
 ## 🔧 Configuration
 
+### Environment Setup
+
+1. **Copy environment template**
+   ```bash
+   cp env.template .env.local
+   ```
+
+2. **Configure environment variables**
+   - Update `NEXTAUTH_SECRET` with a secure random string
+   - Add your Google OAuth credentials
+   - Configure your database URL
+
+### Authentication Setup
+
+1. **Google OAuth (Optional)**
+   - Go to [Google Cloud Console](https://console.cloud.google.com/)
+   - Create OAuth 2.0 credentials
+   - Add authorized redirect URIs: `http://localhost:3000/api/auth/callback/google`
+   - Update `GOOGLE_CLIENT_ID` and `GOOGLE_CLIENT_SECRET` in `.env.local`
+
+2. **Database Setup**
+   ```bash
+   # Generate Prisma client
+   npx prisma generate
+   
+   # Run database migrations
+   npx prisma migrate dev
+   ```
+
 ### Google Cloud Setup
 
 1. **Install Google Cloud CLI**

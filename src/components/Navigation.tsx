@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
+import { useSession, signOut } from 'next-auth/react'
 import { 
   ShoppingBagIcon, 
   HeartIcon, 
@@ -15,6 +16,11 @@ interface NavigationProps {
 
 export default function Navigation({ searchQuery = '', onSearchChange, cartCount = 0 }: NavigationProps) {
   const router = useRouter()
+  const { data: session, status } = useSession()
+
+  const handleSignOut = () => {
+    signOut({ callbackUrl: '/' })
+  }
 
   return (
     <header className="bg-white shadow-sm">
@@ -46,9 +52,43 @@ export default function Navigation({ searchQuery = '', onSearchChange, cartCount
             <button className="p-2 text-gray-600 hover:text-gray-900 relative">
               <HeartIcon className="h-6 w-6" />
             </button>
-            <button className="p-2 text-gray-600 hover:text-gray-900 relative">
-              <UserIcon className="h-6 w-6" />
-            </button>
+            
+            {status === 'loading' ? (
+              <div className="p-2">
+                <div className="w-6 h-6 border-2 border-gray-300 border-t-blue-600 rounded-full animate-spin"></div>
+              </div>
+            ) : session ? (
+              <div className="relative group">
+                <button className="flex items-center space-x-2 p-2 text-gray-600 hover:text-gray-900">
+                  {session.user?.image ? (
+                    <img 
+                      src={session.user.image} 
+                      alt={session.user.name || 'User'} 
+                      className="w-6 h-6 rounded-full"
+                    />
+                  ) : (
+                    <UserIcon className="h-6 w-6" />
+                  )}
+                  <span className="text-sm font-medium">{session.user?.name}</span>
+                </button>
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 z-50 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200">
+                  <Link href="/profile" className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                    Profile
+                  </Link>
+                  <button 
+                    onClick={handleSignOut}
+                    className="block w-full text-left px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <Link href="/auth/signin" className="text-gray-600 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">
+                Sign in
+              </Link>
+            )}
+            
             <button className="p-2 text-gray-600 hover:text-gray-900 relative">
               <ShoppingBagIcon className="h-6 w-6" />
               {cartCount > 0 && (
