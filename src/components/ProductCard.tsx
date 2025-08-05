@@ -2,23 +2,15 @@ import { motion } from 'framer-motion'
 import { HeartIcon, ShoppingBagIcon, StarIcon } from '@heroicons/react/24/outline'
 import { HeartIcon as HeartIconSolid } from '@heroicons/react/24/solid'
 
-interface Product {
-  id: string
-  name: string
-  price: number
-  originalPrice?: number
-  image: string
-  rating: number
-  reviewCount: number
-  isFavorite?: boolean
-  discount?: number
-}
+import { Product } from '@/types/product'
 
 interface ProductCardProps {
-  product: Product
+  product: Product & { isFavorite?: boolean }
   onAddToCart?: (product: Product) => void
   onToggleFavorite?: (product: Product) => void
 }
+
+
 
 export default function ProductCard({ product, onAddToCart, onToggleFavorite }: ProductCardProps) {
   const {

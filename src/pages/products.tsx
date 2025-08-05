@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Head from 'next/head'
 import { motion } from 'framer-motion'
 import { 
@@ -7,6 +7,8 @@ import {
   AdjustmentsHorizontalIcon
 } from '@heroicons/react/24/outline'
 import ProductCard from '../components/ProductCard'
+import { useProducts, useProductCategories, useProductManufacturers } from '../hooks/useProducts'
+import { ProductFilters, ProductSort } from '../types/product'
 
 // Mock data for demonstration
 const mockProducts = [
@@ -75,32 +77,35 @@ const mockProducts = [
 const categories = ['All', 'Gaming BCIs', 'Productivity BCIs', 'Wellness BCIs', 'Research BCIs', 'Educational BCIs', 'Accessibility BCIs']
 
 export default function Products() {
-  const [products, setProducts] = useState(mockProducts)
   const [searchQuery, setSearchQuery] = useState('')
   const [selectedCategory, setSelectedCategory] = useState('All')
   const [sortBy, setSortBy] = useState('featured')
   const [favorites, setFavorites] = useState<string[]>([])
+  const [page, setPage] = useState(1)
 
-  const filteredProducts = products.filter(product => {
-    const matchesSearch = product.name.toLowerCase().includes(searchQuery.toLowerCase())
-    const matchesCategory = selectedCategory === 'All' || product.category === selectedCategory
-    return matchesSearch && matchesCategory
-  })
+  // Build filters and sort
+  const filters: ProductFilters = {
+    ...(selectedCategory !== 'All' && { category: selectedCategory }),
+    ...(searchQuery && { search: searchQuery }),
+  }
 
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
-    switch (sortBy) {
-      case 'price-low':
-        return a.price - b.price
-      case 'price-high':
-        return b.price - a.price
-      case 'rating':
-        return b.rating - a.rating
-      default:
-        return 0
-    }
-  })
+  const sort: ProductSort = {
+    field: sortBy === 'price-low' ? 'price' : 
+           sortBy === 'price-high' ? 'price' : 
+           sortBy === 'rating' ? 'rating' : 'createdAt',
+    direction: sortBy === 'price-low' ? 'asc' : 'desc'
+  }
 
-  const handleToggleFavorite = (product: any) => {
+  // Fetch products using React Query
+  const { data: productsData, isLoading, error } = useProducts(filters, sort, page, 12)
+  const { data: categoriesData } = useProductCategories()
+  const { data: manufacturersData } = useProductManufacturers()
+
+  const products = productsData?.products || []
+  const totalProducts = productsData?.total || 0
+  const hasMore = productsData?.hasMore || false
+
+  const handleToggleFavorite = (product: { id: string }) => {
     setFavorites(prev => 
       prev.includes(product.id) 
         ? prev.filter(id => id !== product.id)
@@ -108,7 +113,7 @@ export default function Products() {
     )
   }
 
-  const handleAddToCart = (product: any) => {
+  const handleAddToCart = (product: { id: string; name: string }) => {
     // TODO: Implement cart functionality
     console.log('Added to cart:', product.name)
   }
@@ -176,29 +181,59 @@ export default function Products() {
           </div>
         </div>
 
+        {/* Loading and Error States */}
+        {isLoading && (
+          <div className="text-center py-12">
+            <div className="w-8 h-8 border-4 border-blue-600 border-t-transparent rounded-full animate-spin mx-auto"></div>
+            <p className="text-gray-500 mt-4">Loading products...</p>
+          </div>
+        )}
+
+        {error && (
+          <div className="text-center py-12">
+            <p className="text-red-500 text-lg">Error loading products. Please try again.</p>
+          </div>
+        )}
+
         {/* Results count */}
-        <div className="mb-6">
-          <p className="text-gray-600">
-            Showing {sortedProducts.length} of {products.length} products
-          </p>
-        </div>
+        {!isLoading && !error && (
+          <div className="mb-6">
+            <p className="text-gray-600">
+              Showing {products.length} of {totalProducts} products
+            </p>
+          </div>
+        )}
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {sortedProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              product={{
-                ...product,
-                isFavorite: favorites.includes(product.id)
-              }}
-              onAddToCart={handleAddToCart}
-              onToggleFavorite={handleToggleFavorite}
-            />
-          ))}
-        </div>
+        {!isLoading && !error && (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {products.map((product) => (
+              <ProductCard
+                key={product.id}
+                product={{
+                  ...product,
+                  isFavorite: favorites.includes(product.id)
+                }}
+                onAddToCart={handleAddToCart}
+                onToggleFavorite={handleToggleFavorite}
+              />
+            ))}
+          </div>
+        )}
 
-        {sortedProducts.length === 0 && (
+        {/* Pagination */}
+        {!isLoading && !error && hasMore && (
+          <div className="mt-8 text-center">
+            <button
+              onClick={() => setPage(page + 1)}
+              className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Load More Products
+            </button>
+          </div>
+        )}
+
+        {!isLoading && !error && products.length === 0 && (
           <div className="text-center py-12">
             <p className="text-gray-500 text-lg">No products found matching your criteria.</p>
           </div>
